@@ -40,8 +40,8 @@
                 }
             }
             if (entropy < 0.15) {
-                document.querySelector('.no-button')?.textContent = "Wait... what?";
-                document.querySelector('.yes-button')?.textContent = "Huh??";
+                document.querySelector('.no-button') && (document.querySelector('.no-button').textContent = "Wait... what?");
+                document.querySelector('.yes-button') && (document.querySelector('.yes-button').textContent = "Huh??");
             }
             if (entropy < 0.1) {
                 let base = document.body;
@@ -71,7 +71,7 @@ const prompts = [
 
 let promptIndex = 0;
 
-function handleNo() {
+function handleNoClick() {
     const btnNo = document.querySelector('.no-button');
     const btnYes = document.querySelector('.yes-button');
     btnNo.textContent = prompts[promptIndex];
@@ -80,6 +80,6 @@ function handleNo() {
     btnYes.style.fontSize = `${currentSize * 1.5}px`;
 }
 
-function handleYes() {
+function handleYesClick() {
     window.location.href = "yes_page.html";
 }
